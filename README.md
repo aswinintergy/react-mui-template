@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# Getting Started
+
+### `Used Packages`
+
+-   MUI, MUI X, MUI Icons
+-   React router dom
+-   Redux toolkit & Redux persist
+-   React hook form
+-   Axios
+-   env-cmd
+
+### `Font`
+
+-   Roboto
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +81,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# react-mui-template
