@@ -61,6 +61,12 @@ const palette = (mode = 'light') => {
             main: themeColors.info,
             dark: darken(themeColors.info, 0.2),
         },
+        dark: {
+            lighter: alpha(themeColors.black, 0.1),
+            light: lighten(themeColors.black, 0.3),
+            main: themeColors.black,
+            dark: darken(themeColors.black, 0.2),
+        },
         grey: {
             50: '#FAFAFA',
             100: '#F5F5F5',

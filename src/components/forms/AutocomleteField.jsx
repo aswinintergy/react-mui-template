@@ -3,7 +3,7 @@ import React from 'react'
 import { isValid } from 'utils/helpers'
 
 const AutocomleteField = (props) => {
-    const { value, options = [], label, placeholder, getLabelBy = 'label', getValueBy = 'id', ...rest } = props
+    const { value, inputProps, onChange, options = [], getLabelBy = 'label', getValueBy = 'id', ...rest } = props
 
     const validateInputValue = () => {
         if (isValid(value)) {
@@ -21,14 +21,23 @@ const AutocomleteField = (props) => {
     return (
         <Autocomplete
             options={options}
+            onChange={(e, val, r) => {
+                if (r === 'clear') {
+                    onChange(e, null, r, null)
+                } else {
+                    if (val) {
+                        onChange(e, val[getValueBy], r, val)
+                    } else {
+                        onChange(e, val, r)
+                    }
+                }
+            }}
             value={validateInputValue()}
             getOptionLabel={(option) => option[getLabelBy] || ''}
             isOptionEqualToValue={(item, current) => item[getValueBy] === current[getValueBy]}
             {...rest}
             renderInput={(params) => {
-                return (
-                    <TextField {...params} label={label} placeholder={placeholder} InputLabelProps={{ shrink: true }} />
-                )
+                return <TextField {...params} {...inputProps} InputLabelProps={{ shrink: true }} />
             }}
         />
     )

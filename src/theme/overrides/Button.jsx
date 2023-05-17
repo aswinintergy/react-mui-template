@@ -6,12 +6,16 @@ export default function MuiButton(theme) {
             },
             styleOverrides: {
                 root: {
-                    '&.formAlign': {
-                        marginTop: theme.spacing(2.6),
-                    },
+                    minWidth: 100,
                 },
-                sizeMedium: {
-                    padding: '7.75px 16px',
+                outlinedSizeMedium: {
+                    padding: '10px 16px',
+                },
+                containedSizeMedium: {
+                    padding: '11px 16px',
+                },
+                textSizeMedium: {
+                    padding: '11px 16px',
                 },
             },
         },

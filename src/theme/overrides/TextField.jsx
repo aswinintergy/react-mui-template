@@ -1,3 +1,5 @@
+import { pxToRem } from 'theme/typography'
+
 export default function MuiTextField(theme) {
     return {
         MuiTextField: {
@@ -14,9 +16,9 @@ export default function MuiTextField(theme) {
                     },
 
                     '& .MuiOutlinedInput-notchedOutline': {
-                        borderColor: '#ccc',
+                        // borderColor: '#ccc',
                         left: 0,
-                        top: -1,
+                        top: 0,
                         '& legend': {
                             display: 'none',
                         },
@@ -30,10 +32,27 @@ export default function MuiTextField(theme) {
                     '& label + .MuiOutlinedInput-root': {
                         marginTop: theme.spacing(2.8),
                     },
-
-                    '& .MuiInputLabel-formControl.MuiInputLabel-shrink': {
-                        transform: 'translate(0px, 3px) scale(0.75)',
-                    },
+                },
+            },
+        },
+        MuiInputLabel: {
+            styleOverrides: {
+                root: {
+                    color: theme.palette.grey[600],
+                },
+                shrink: {
+                    transform: 'translate(2px, 1px) scale(0.80)',
+                    fontSize: pxToRem(16),
+                    fontWeight: 500,
+                },
+            },
+        },
+        MuiFormHelperText: {
+            styleOverrides: {
+                root: {
+                    fontSize: pxToRem(12),
+                    marginLeft: 2,
+                    marginTop: 2,
                 },
             },
         },

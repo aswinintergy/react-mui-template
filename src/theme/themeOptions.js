@@ -1,17 +1,16 @@
 import palette from './palette'
 import shadows from './shadows'
+import typography from './typography'
 
 const themeOptions = ({ mode = 'light' }) => {
     const themeConfig = {
         palette: palette(mode),
-        typography: {
-            fontFamily: 'Roboto',
-        },
+        typography,
         // ...spacing,
         shadows: shadows(mode),
         // breakpoints: breakpoints(),
         shape: {
-            borderRadius: 3,
+            borderRadius: 5,
         },
         mixins: {
             toolbar: {

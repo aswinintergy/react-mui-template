@@ -1,7 +1,8 @@
-import { CssBaseline, StyledEngineProvider, ThemeProvider, createTheme } from '@mui/material'
+import { CssBaseline, GlobalStyles, StyledEngineProvider, ThemeProvider, createTheme } from '@mui/material'
 import React from 'react'
 import themeOptions from './themeOptions'
 import ComponentsOverrides from './overrides/Index'
+import GlobalStylings from './GlobalStylings'
 
 const DEFAULT_MODE = { mode: 'light' }
 
@@ -15,6 +16,7 @@ const ThemeWrapper = ({ children }) => {
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
+                <GlobalStyles styles={() => GlobalStylings(theme)} />
                 {children}
             </ThemeProvider>
         </StyledEngineProvider>
