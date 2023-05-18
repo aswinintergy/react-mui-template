@@ -1,9 +1,12 @@
 const urls = {
     // AUTH URLS
-    login: '/login',
-    otpVerification: '/otp-verification',
-    resetPassword: '/reset-password',
-    forgetPassword: '/forget-password',
+    auth: {
+        root: '/auth',
+        login: '/auth/login',
+        otpVerification: '/auth/otp-verification',
+        resetPassword: '/auth/reset-password',
+        forgetPassword: '/auth/forget-password',
+    },
 
     // PROTECTED PAGES
     upload: '/',

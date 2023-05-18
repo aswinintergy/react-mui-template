@@ -2,7 +2,7 @@ import { styled } from '@mui/material'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-const authLayout = () => {
+const AuthLayout = () => {
     return (
         <Root>
             <Outlet />
@@ -10,7 +10,7 @@ const authLayout = () => {
     )
 }
 
-export default authLayout
+export default AuthLayout
 
 // styles
 const Root = styled('main')({

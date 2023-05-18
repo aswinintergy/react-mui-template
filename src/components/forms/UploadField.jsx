@@ -2,7 +2,7 @@ import { CloudUpload, Check } from '@mui/icons-material'
 import { Box, Button, TextField, Typography } from '@mui/material'
 import React from 'react'
 
-const UploadField = ({ onChange, value, readOnly, disabled, ...props }) => {
+const UploadField = ({ onChange, value, readOnly, disabled, style, ...props }) => {
     const handleChange = (e) => {
         let files = e.target.files[0]
 
@@ -21,7 +21,7 @@ const UploadField = ({ onChange, value, readOnly, disabled, ...props }) => {
     }
 
     return (
-        <div>
+        <div style={style}>
             <Box
                 component="label"
                 sx={{

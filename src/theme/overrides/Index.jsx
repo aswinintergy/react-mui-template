@@ -1,6 +1,7 @@
 import MuiAutocomplete from './Autocomplete'
 import MuiButton from './Button'
 import MuiDatagrid from './Datagrid'
+import MuiSelect from './Select'
 import MuiTableContainer from './TableContainer'
 import MuiTabs from './Tabs'
 import MuiTextField from './TextField'
@@ -12,6 +13,7 @@ export default function ComponentsOverrides(theme) {
         MuiButton(theme),
         MuiTableContainer(theme),
         MuiDatagrid(theme),
-        MuiTabs(theme)
+        MuiTabs(theme),
+        MuiSelect(theme)
     )
 }

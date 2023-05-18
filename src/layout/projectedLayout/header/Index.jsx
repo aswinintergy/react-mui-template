@@ -12,8 +12,15 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
+import urls from 'routes/urls'
+import { Link } from 'react-router-dom'
 
-const pages = ['Upload', 'Review', 'Reports', 'Settings']
+const pages = [
+    { label: 'Upload', link: urls.upload },
+    { label: 'Review', link: urls.review },
+    { label: 'Reports', link: urls.reports },
+    { label: 'Settings', link: urls.settings.root },
+]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 function Header() {
@@ -87,8 +94,8 @@ function Header() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page.label}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -115,11 +122,12 @@ function Header() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
+                                key={page.label}
+                                component={Link}
+                                to={page.link}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {page.label}
                             </Button>
                         ))}
                     </Box>
