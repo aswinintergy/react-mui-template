@@ -1,19 +1,30 @@
 import { Box, MenuItem, Pagination, PaginationItem, Select, Stack, Typography } from '@mui/material'
 import {
-    gridPageCountSelector,
+    gridFilteredTopLevelRowCountSelector,
     gridPageSelector,
     gridPageSizeSelector,
     gridRowCountSelector,
     useGridApiContext,
+    useGridRootProps,
     useGridSelector,
 } from '@mui/x-data-grid'
 
+const getPageCount = (rowCount, pageSize) => {
+    if (pageSize > 0 && rowCount > 0) {
+        return Math.ceil(rowCount / pageSize)
+    }
+
+    return 0
+}
+
 const GridFooter = () => {
     const apiRef = useGridApiContext()
-    const page = useGridSelector(apiRef, gridPageSelector)
-    const pageCount = useGridSelector(apiRef, gridPageCountSelector)
-    const pageSize = useGridSelector(apiRef, gridPageSizeSelector)
     const rowCount = useGridSelector(apiRef, gridRowCountSelector)
+    const rootProps = useGridRootProps()
+    const pageSize = useGridSelector(apiRef, gridPageSizeSelector)
+    const page = useGridSelector(apiRef, gridPageSelector)
+    const visibleTopLevelRowCount = useGridSelector(apiRef, gridFilteredTopLevelRowCountSelector)
+    const pageCount = getPageCount(rootProps.rowCount ?? visibleTopLevelRowCount, pageSize)
 
     if (rowCount) {
         return (

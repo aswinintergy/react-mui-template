@@ -13,9 +13,10 @@ const DataTable = (props) => {
                 disableRowSelectionOnClick
                 disableColumnMenu
                 pagination
+                paginationMode="server"
                 density="compact"
                 autoHeight
-                rowsPerPageOptions={[10, 20, 30, 40, 50]}
+                pageSizeOptions={[5, 10, 25]}
                 {...props}
             />
         </Box>
